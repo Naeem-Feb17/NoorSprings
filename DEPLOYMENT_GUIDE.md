@@ -150,11 +150,12 @@ Required for all deployment options:
 5. **Get Connection String**
    - Click "Connect" on your cluster
    - Choose "Connect your application"
-   - Copy connection string:
+   - Copy connection string (EXAMPLE - not real credentials):
      ```
-     mongodb+srv://username:<password>@cluster0.xxxxx.mongodb.net/noor-springs?retryWrites=true&w=majority
+     mongodb+srv://YOUR_DB_USER:<YOUR_PASSWORD>@your-cluster.xxxxx.mongodb.net/noor-springs?retryWrites=true&w=majority
      ```
-   - Replace `<password>` with your actual password
+   - Replace `<YOUR_PASSWORD>` with your actual password
+   - Replace `YOUR_DB_USER` with your database username
    - Use this as `MONGODB_URI` in environment variables
 
 ---
@@ -317,9 +318,10 @@ certbot --nginx -d yourdomainname.com -d www.yourdomainname.com
 ### Backend (.env)
 
 ```env
+# EXAMPLE ONLY - Replace with your actual MongoDB Atlas credentials
 # Required
 PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/noor-springs
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@your-cluster.mongodb.net/noor-springs
 NODE_ENV=production
 
 # Optional (Email notifications)
