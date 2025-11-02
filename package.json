@@ -1,0 +1,18 @@
+{
+  "name": "noor-springs-website",
+  "version": "1.0.0",
+  "description": "Full-stack MERN website for Noor Springs - Spring Manufacturing Company",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start-backend": "cd backend && npm run dev",
+    "start-frontend": "cd frontend && npm run dev",
+    "build-frontend": "cd frontend && npm run build"
+  },
+  "keywords": ["noor-springs", "mern", "react", "mongodb", "express"],
+  "author": "Noor Springs",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

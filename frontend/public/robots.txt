@@ -1,0 +1,18 @@
+# Noor Springs - Robots.txt
+# https://noorsprings.in
+
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /products
+Allow: /contact
+
+# Disallow admin or backend routes if any
+Disallow: /admin
+Disallow: /api
+
+# Sitemap location
+Sitemap: https://noorsprings.in/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
