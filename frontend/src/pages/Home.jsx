@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import SEO from "../components/SEO";
+import banner from "../Assests/banner.png";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -69,14 +70,24 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-steel-800 text-white">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <section
+        className="relative bg-cover bg-center text-white"
+        style={{ backgroundImage: `url(${banner})` }}
+      >
+        {/* Darker overlay + subtle backdrop blur to improve text contrast */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight"
+              style={{ textShadow: "0 6px 18px rgba(0,0,0,0.7)" }}
+            >
               {t.heroTitle}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-100">
+            <p
+              className="text-xl md:text-2xl mb-8 text-primary-100"
+              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.6)" }}
+            >
               {t.heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
