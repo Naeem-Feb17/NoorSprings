@@ -61,7 +61,8 @@ export default function Contact() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await axios.post("/api/enquiries", formData);
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const response = await axios.post(`${apiUrl}/api/enquiries`, formData);
 
       setStatus({
         type: "success",
@@ -102,7 +103,7 @@ export default function Contact() {
         title="Contact Noor Springs - Get Quote for Custom Spring Manufacturing"
         description="Contact Noor Springs in Visakhapatnam for custom spring solutions. Call +91-9440596384 or send enquiry. Located near Dolphin Hotel, Suryabagh. Open Mon-Sat 9 AM - 6 PM."
         keywords="contact Noor Springs, spring quote, spring enquiry, Visakhapatnam spring manufacturer, custom spring order, spring supplier contact"
-        canonical="https://noorsprings.in/contact"
+        canonical="https://noorspring.vercel.app/contact"
       />
 
       {/* Hero Section */}

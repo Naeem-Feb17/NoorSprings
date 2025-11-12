@@ -161,7 +161,7 @@ export default function Products() {
         title="Spring Products - Compression, Tension, Torsion & Flat Springs | Noor Springs"
         description="Explore our wide range of springs: compression springs, tension springs, torsion springs, flat springs, and custom solutions. Quality manufacturing in Visakhapatnam with fast delivery."
         keywords="compression springs, tension springs, torsion springs, flat springs, die springs, leaf springs, coil springs, custom springs, industrial springs Visakhapatnam"
-        canonical="https://noorsprings.in/products"
+        canonical="https://noorspring.vercel.app/products"
       />
 
       {/* Hero Section */}

@@ -128,8 +128,9 @@ export default function SpringEnquiry() {
         formDataToSend.append("files", file);
       });
 
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const response = await axios.post(
-        "/api/spring-enquiries",
+        `${apiUrl}/api/spring-enquiries`,
         formDataToSend,
         {
           headers: {
@@ -267,7 +268,7 @@ ${formData.name}
         title="Spring Enquiry Form - Custom Spring Quotation | Noor Springs"
         description="Get a custom quotation for springs. Submit detailed specifications including OD, ID, wire diameter, number of rings, and load requirements. Upload technical drawings for accurate quotes."
         keywords="spring quotation, custom spring enquiry, spring specifications, OD ID spring, wire diameter, spring load calculation, technical drawing upload"
-        canonicalUrl="https://noorsprings.in/spring-enquiry"
+        canonicalUrl="https://noorspring.vercel.app/spring-enquiry"
       />
 
       {/* Hero Section */}

@@ -4,8 +4,8 @@ export default function SEO({
   title = "Noor Springs - Quality Spring Manufacturer | Visakhapatnam",
   description = "Noor Springs - Leading manufacturer of compression, tension, torsion, and flat springs in Visakhapatnam since 2011. Custom spring solutions with ISO certified quality.",
   keywords = "Noor Springs, spring manufacturer, compression spring, tension spring, torsion spring, flat spring, Visakhapatnam, Andhra Pradesh, custom springs, industrial springs",
-  canonical = "https://noorsprings.in",
-  ogImage = "https://noorsprings.in/og-image.jpg",
+  canonical = "https://noorspring.vercel.app/",
+  ogImage = "https://noorspring.vercel.app/og-image.jpg",
   structuredData = null,
 }) {
   const defaultStructuredData = {
@@ -28,7 +28,7 @@ export default function SEO({
       longitude: "83.296884",
     },
     telephone: "+91-9440596384",
-    url: "https://noorsprings.in",
+    url: "https://noorspring.vercel.app/",
     priceRange: "$$",
     openingHoursSpecification: [
       {

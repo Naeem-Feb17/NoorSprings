@@ -54,7 +54,7 @@ export default function About() {
         title="About Noor Springs - Spring Manufacturing Excellence Since 2011"
         description="Learn about Noor Springs, a trusted spring manufacturer in Visakhapatnam since 2011. Founded by Mr. Noor Mohammed, we deliver quality compression, tension, and torsion springs to industries across India."
         keywords="about Noor Springs, spring manufacturer history, Visakhapatnam springs, Mr. Noor Mohammed, spring manufacturing company"
-        canonical="https://noorsprings.in/about"
+        canonical="https://noorspring.vercel.app/about"
       />
 
       {/* Hero Section */}
