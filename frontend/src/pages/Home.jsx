@@ -8,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import AdBanner from "../components/AdBanner";
 import SEO from "../components/SEO";
 import banner from "../Assests/banner.png";
 

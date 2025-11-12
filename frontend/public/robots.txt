@@ -1,5 +1,5 @@
 # Noor Springs - Robots.txt
-# https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/
+# https://noorspring.vercel.app/
 
 User-agent: *
 Allow: /
@@ -13,7 +13,4 @@ Disallow: /admin
 Disallow: /api
 
 # Sitemap location
-Sitemap: https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1
+Sitemap: https://noorspring.vercel.app/sitemap.xml

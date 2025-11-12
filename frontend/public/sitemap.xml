@@ -4,7 +4,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/</loc>
+    <loc>https://noorspring.vercel.app/</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
@@ -12,7 +12,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/about</loc>
+    <loc>https://noorspring.vercel.app/about</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -20,7 +20,7 @@
   
   <!-- Products Page -->
   <url>
-    <loc>https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/products</loc>
+    <loc>https://noorspring.vercel.app/products</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
@@ -28,7 +28,7 @@
   
   <!-- Contact Page -->
   <url>
-    <loc>https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/contact</loc>
+    <loc>https://noorspring.vercel.app/contact</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -36,7 +36,7 @@
 
   <!-- Spring Enquiry Page -->
   <url>
-    <loc>https://noorspring-4heu34b0q-naeems-projects-a95c1b35.vercel.app/spring-enquiry</loc>
+    <loc>https://noorspring.vercel.app/spring-enquiry</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import SEO from "../components/SEO";
+import AdBanner from "../components/AdBanner";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -240,6 +241,13 @@ export default function Products() {
               <ArrowRight size={20} className="ml-2" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Advertisement Banner */}
+      <section className="py-8 bg-steel-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AdBanner slot="YOUR_AD_SLOT" format="auto" />
         </div>
       </section>
 
