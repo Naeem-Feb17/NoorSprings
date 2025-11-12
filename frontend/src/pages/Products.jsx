@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import SEO from "../components/SEO";
-import AdBanner from "../components/AdBanner";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -225,10 +224,10 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="text-2xl font-bold mb-2 text-black">
                 Need Custom Spring Specifications?
               </h3>
-              <p className="text-blue-100">
+              <p className="text-black text-opacity-90">
                 Submit detailed technical specs (OD, ID, Wire Dia, Rings) with
                 drawings for accurate quotations
               </p>
@@ -241,13 +240,6 @@ export default function Products() {
               <ArrowRight size={20} className="ml-2" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Advertisement Banner */}
-      <section className="py-8 bg-steel-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AdBanner slot="YOUR_AD_SLOT" format="auto" />
         </div>
       </section>
 
