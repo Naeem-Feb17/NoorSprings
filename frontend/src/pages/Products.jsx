@@ -227,7 +227,7 @@ export default function Products() {
               <h3 className="text-2xl font-bold mb-2 text-black">
                 Need Custom Spring Specifications?
               </h3>
-              <p className="text-black text-opacity-90">
+              <p className="text-black">
                 Submit detailed technical specs (OD, ID, Wire Dia, Rings) with
                 drawings for accurate quotations
               </p>
