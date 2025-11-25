@@ -29,7 +29,7 @@ export default function Products() {
         "Length: 5cm",
         "Load: 250kg",
       ],
-      image: "🔵",
+      icon: "compression-spring",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default function Products() {
         "Wire Dia: 5mm",
         "Load: 250kg",
       ],
-      image: "⚪",
+      icon: "flat-spring",
     },
     {
       id: 3,
@@ -57,7 +57,7 @@ export default function Products() {
         "Length: 10cm",
         "Load: 500kg",
       ],
-      image: "⚫",
+      icon: "flat-spring",
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ export default function Products() {
         "Custom Sizes",
         "Load: Up to 1000kg",
       ],
-      image: "🔘",
+      icon: "compression-spring",
     },
     {
       id: 5,
@@ -79,7 +79,7 @@ export default function Products() {
       description:
         "Precision-engineered extension springs that pull back when stretched. Perfect for trampolines, garage doors, and machinery.",
       specs: ["Material: Spring Steel", "Various Sizes", "Load: Variable"],
-      image: "⭕",
+      icon: "tension-spring",
     },
     {
       id: 6,
@@ -88,7 +88,7 @@ export default function Products() {
       description:
         "Rotational force springs used in hinges, clothespins, and vehicle suspensions. Custom torque specifications available.",
       specs: ["Material: Music Wire", "Custom Angles", "Torque: Variable"],
-      image: "🔴",
+      icon: "torsion-spring",
     },
     {
       id: 7,
@@ -97,7 +97,7 @@ export default function Products() {
       description:
         "Heavy-duty compression springs used in tooling and dies. Available in light, medium, and heavy load ratings.",
       specs: ["Material: Chrome Silicon", "Color Coded", "High Precision"],
-      image: "🟡",
+      icon: "compression-spring",
     },
     {
       id: 8,
@@ -106,7 +106,7 @@ export default function Products() {
       description:
         "Stack or layering of metal strips, commonly used in vehicle suspension systems for load distribution.",
       specs: ["Material: Spring Steel", "Layered Design", "Vehicle Grade"],
-      image: "🟢",
+      icon: "flat-spring",
     },
     {
       id: 9,
@@ -275,37 +275,46 @@ export default function Products() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredProducts.map((product) => (
-                  <div key={product.id} className="card group">
-                    <div className="h-48 bg-gradient-to-br from-steel-100 to-steel-200 flex items-center justify-center text-6xl">
-                      {product.image}
+                  <div
+                    key={product.id}
+                    className="card group hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-white dark:bg-steel-800"
+                  >
+                    <div className="h-48 bg-gradient-to-br from-steel-100 to-steel-200 dark:from-steel-700 dark:to-steel-800 flex items-center justify-center border-b-2 border-primary-200 dark:border-primary-800 transition-transform duration-300">
+                      <img
+                        src={`/icons/${product.icon}.svg`}
+                        alt={product.name}
+                        className="w-20 h-20 filter drop-shadow-lg"
+                      />
                     </div>
 
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                        <span className="text-sm font-medium text-primary-600 bg-primary-50 dark:bg-primary-950 dark:text-primary-400 px-3 py-1 rounded-full">
                           {product.category}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary-600 transition-colors">
+                      <h3 className="text-lg font-semibold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                         {product.name}
                       </h3>
 
-                      <p className="text-steel-600 mb-4 line-clamp-3">
+                      <p className="text-steel-600 dark:text-steel-400 mb-4 line-clamp-3 text-sm">
                         {product.description}
                       </p>
 
                       <div className="mb-4">
-                        <h4 className="font-semibold text-steel-900 mb-2 text-sm">
+                        <h4 className="font-semibold text-steel-900 dark:text-steel-100 mb-2 text-xs uppercase tracking-wide">
                           Specifications:
                         </h4>
                         <ul className="space-y-1">
                           {product.specs.map((spec, index) => (
                             <li
                               key={index}
-                              className="text-sm text-steel-600 flex items-start"
+                              className="text-xs text-steel-600 dark:text-steel-400 flex items-start"
                             >
-                              <span className="text-primary-600 mr-2">•</span>
+                              <span className="text-primary-600 dark:text-primary-400 mr-2">
+                                •
+                              </span>
                               {spec}
                             </li>
                           ))}
@@ -315,7 +324,7 @@ export default function Products() {
                       <Link
                         to="/contact"
                         state={{ selectedProduct: product.name }}
-                        className="btn-primary w-full text-center inline-flex items-center justify-center"
+                        className="btn-primary w-full text-center inline-flex items-center justify-center text-sm"
                       >
                         Request Quote
                         <ArrowRight size={16} className="ml-2" />

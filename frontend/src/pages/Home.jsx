@@ -19,22 +19,34 @@ export default function Home() {
       name: "Compression Springs",
       description:
         "High-quality compression springs for various industrial applications",
-      image: "🔵",
+      icon: "compression-spring",
+      color: "from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900",
+      borderColor: "border-blue-200 dark:border-blue-800",
+      textColor: "text-blue-600 dark:text-blue-400",
     },
     {
-      name: "Flat Springs",
-      description: "Durable flat springs made from premium materials",
-      image: "⚪",
+      name: "Tension Springs",
+      description: "Extension springs for pulling and holding applications",
+      icon: "tension-spring",
+      color: "from-green-50 to-green-100 dark:from-green-950 dark:to-green-900",
+      borderColor: "border-green-200 dark:border-green-800",
+      textColor: "text-green-600 dark:text-green-400",
     },
     {
       name: "Torsion Springs",
       description: "Precision-engineered torsion springs for rotational force",
-      image: "🔘",
+      icon: "torsion-spring",
+      color: "from-amber-50 to-amber-100 dark:from-amber-950 dark:to-amber-900",
+      borderColor: "border-amber-200 dark:border-amber-800",
+      textColor: "text-amber-600 dark:text-amber-400",
     },
     {
-      name: "Flat Wire Springs",
-      description: "Specialized flat wire springs for unique applications",
-      image: "⚫",
+      name: "Flat Springs",
+      description: "Durable flat springs made from premium materials",
+      icon: "flat-spring",
+      color: "from-red-50 to-red-100 dark:from-red-950 dark:to-red-900",
+      borderColor: "border-red-200 dark:border-red-800",
+      textColor: "text-red-600 dark:text-red-400",
     },
   ];
 
@@ -166,23 +178,34 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {products.map((product, index) => (
-              <div key={index} className="card group">
-                <div className="h-48 bg-gradient-to-br from-steel-100 to-steel-200 dark:from-steel-700 dark:to-steel-800 flex items-center justify-center text-6xl">
-                  {product.image}
+              <div
+                key={index}
+                className="card group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-transparent hover:border-l-4 hover:border-current bg-white dark:bg-steel-800"
+              >
+                <div
+                  className={`h-48 bg-gradient-to-br ${product.color} dark:bg-gradient-to-br flex items-center justify-center ${product.borderColor} border rounded-t-lg transition-transform duration-300`}
+                >
+                  <img
+                    src={`/icons/${product.icon}.svg`}
+                    alt={product.name}
+                    className={`w-24 h-24 ${product.textColor} filter drop-shadow-lg`}
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <h3
+                    className={`text-lg font-semibold mb-2 ${product.textColor} group-hover:text-opacity-100 transition-opacity`}
+                  >
                     {product.name}
                   </h3>
-                  <p className="text-steel-600 dark:text-steel-400 mb-4">
+                  <p className="text-steel-600 dark:text-steel-400 text-sm mb-4">
                     {product.description}
                   </p>
                   <Link
                     to="/contact"
-                    className="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center"
+                    className={`${product.textColor} font-medium font-bold hover:underline transition-all inline-flex items-center text-sm`}
                   >
-                    {t.enquireNow}
-                    <ArrowRight size={16} className="ml-1" />
+                    Learn More
+                    <ArrowRight size={14} className="ml-1" />
                   </Link>
                 </div>
               </div>
@@ -200,6 +223,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ad Banner - clearly labeled and separated from navigation */}
+      <AdBanner slot="1234567890" format="auto" />
 
       {/* About Preview */}
       <section className="py-16 bg-steel-900 dark:bg-steel-950 text-white">
@@ -289,31 +315,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary-600 dark:bg-primary-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      {/* Ad Banner - clearly labeled and separated from CTA buttons */}
+      <AdBanner slot="1234567890" format="auto" />
+
+      {/* CTA Section - DISTINCT from ads and navigation */}
+      <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-900 dark:to-primary-950 text-white relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {t.needCustomSolutions}
           </h2>
-          <p className="text-xl text-primary-100 dark:text-primary-200 mb-8">
+          <p className="text-xl text-primary-100 dark:text-primary-200 mb-10 max-w-2xl mx-auto">
             {t.ctaDescription}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Prominent CTA buttons - clearly distinct from everything else */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               to="/contact"
-              className="btn-primary bg-white text-primary-600 hover:bg-primary-50 inline-flex items-center justify-center"
+              className="px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-primary-50 shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105"
             >
-              {t.requestQuote}
-              <ArrowRight className="ml-2" size={20} />
+              Request a Quote
+              <ArrowRight className="ml-2" size={22} />
             </Link>
             <a
               href="tel:9440596384"
-              className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 inline-flex items-center justify-center"
+              className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105"
             >
-              <Phone size={20} className="mr-2" />
-              {t.callNow}: 9440596384
+              <Phone className="mr-2" size={22} />
+              Call Now: 9440596384
             </a>
           </div>
+
+          <p className="text-primary-100 text-sm">
+            📧 {t.contactUs}: noorsprings@gmail.com
+          </p>
         </div>
       </section>
     </div>
