@@ -334,21 +334,27 @@ export default function Home() {
             {t.ctaDescription}
           </p>
 
+          {/* Note: These are BUSINESS CONTACT CALLS-TO-ACTION, not navigation or ads */}
+          <div className="bg-primary-600 dark:bg-primary-800 px-4 py-2 rounded-lg mb-6 inline-block">
+            <p className="text-sm font-semibold text-primary-50">
+              👇 Direct Business Contact Options 👇
+            </p>
+          </div>
+
           {/* Prominent CTA buttons - clearly distinct from everything else */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link
               to="/contact"
-              className="px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-primary-50 shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105"
+              className="px-10 py-5 bg-white text-primary-700 font-black rounded-xl hover:bg-primary-50 shadow-2xl hover:shadow-3xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105 border-2 border-white"
             >
-              Request a Quote
-              <ArrowRight className="ml-2" size={22} />
+              📋 REQUEST A QUOTE
+              <ArrowRight className="ml-3" size={24} />
             </Link>
             <a
               href="tel:9440596384"
-              className="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105"
+              className="px-10 py-5 bg-green-500 hover:bg-green-600 text-white font-black rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 inline-flex items-center justify-center text-lg hover:scale-105 border-2 border-green-600"
             >
-              <Phone className="mr-2" size={22} />
-              Call Now: 9440596384
+              ☎️ CALL NOW: 9440596384
             </a>
           </div>
 

@@ -43,22 +43,22 @@ export default function AdBanner({ slot = "YOUR_AD_SLOT", format = "auto" }) {
     <aside
       aria-label="Advertisement section"
       role="region"
-      className="my-12 w-full flex flex-col items-center bg-gradient-to-r from-amber-50 via-amber-50 to-amber-100 py-6 border-t-4 border-b-4 border-amber-400 dark:from-amber-950 dark:via-amber-950 dark:to-amber-900 dark:border-amber-700"
+      className="my-12 w-full flex flex-col items-center bg-amber-100 dark:bg-amber-950 py-8 border-t-8 border-b-8 border-amber-500 dark:border-amber-600"
     >
-      {/* PROMINENT Advertisement Label - Very Clear & Visible */}
-      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mb-4">
-        <div className="flex items-center gap-3 bg-amber-300 dark:bg-amber-600 px-4 py-3 rounded-lg w-fit shadow-md">
+      {/* PROMINENT Advertisement Label - VERY CLEAR & DISTINCT */}
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mb-6">
+        <div className="flex items-center gap-4 bg-amber-400 dark:bg-amber-600 px-6 py-4 rounded-xl w-fit shadow-lg border-2 border-amber-600 dark:border-amber-700">
           <AlertCircle
-            size={20}
+            size={28}
             className="text-amber-900 dark:text-amber-100 flex-shrink-0"
             strokeWidth={3}
           />
           <div className="flex flex-col">
-            <span className="text-sm font-bold text-amber-900 dark:text-amber-100 tracking-wide">
-              SPONSORED ADVERTISEMENT
+            <span className="text-base font-black text-amber-900 dark:text-amber-100 tracking-widest">
+              ⚠️ SPONSORED ADVERTISEMENT ⚠️
             </span>
-            <span className="text-xs text-amber-800 dark:text-amber-200">
-              Paid content by Google
+            <span className="text-sm font-semibold text-amber-800 dark:text-amber-200">
+              This is paid content by Google - NOT a link or download
             </span>
           </div>
         </div>
@@ -110,10 +110,11 @@ export default function AdBanner({ slot = "YOUR_AD_SLOT", format = "auto" }) {
       </div>
 
       {/* Bottom disclaimer */}
-      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-3">
-        <p className="text-xs text-amber-700 dark:text-amber-300 text-center">
-          This is a sponsored ad. We may earn commission if you interact with
-          it.
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-4">
+        <p className="text-sm font-semibold text-amber-900 dark:text-amber-100 text-center bg-amber-200 dark:bg-amber-800 px-4 py-3 rounded-lg">
+          ⚠️ This advertisement is provided by Google and is NOT a navigation
+          link, menu, or download button. Clicking on ads supports our business
+          operations.
         </p>
       </div>
     </aside>

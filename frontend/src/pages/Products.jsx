@@ -220,24 +220,27 @@ export default function Products() {
       </section>
 
       {/* Spring Specification Enquiry CTA */}
-      <section className="py-8 bg-gradient-to-r from-primary to-primary-dark">
+      <section className="py-12 bg-blue-600 dark:bg-blue-800 border-l-4 border-r-4 border-blue-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2 text-black">
-                Need Custom Spring Specifications?
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left text-white">
+              <h3 className="text-2xl font-black mb-3 text-white">
+                📋 SUBMIT CUSTOM SPECIFICATIONS
               </h3>
-              <p className="text-black">
-                Submit detailed technical specs (OD, ID, Wire Dia, Rings) with
-                drawings for accurate quotations
+              <p className="text-white font-semibold mb-2">
+                Need custom dimensions? Submit your technical requirements:
+              </p>
+              <p className="text-blue-100 text-sm">
+                OD, ID, Wire Diameter, Rings, Material, Load Requirements +
+                Technical Drawings/PDFs
               </p>
             </div>
             <Link
               to="/spring-enquiry"
-              className="btn-secondary bg-white text-primary hover:bg-blue-50 whitespace-nowrap flex items-center"
+              className="px-8 py-4 bg-white text-blue-600 font-black rounded-lg hover:bg-blue-50 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap flex items-center text-lg border-2 border-white"
             >
-              Technical Enquiry Form
-              <ArrowRight size={20} className="ml-2" />
+              📑 FILL ENQUIRY FORM
+              <ArrowRight size={22} className="ml-2" />
             </Link>
           </div>
         </div>
@@ -324,9 +327,9 @@ export default function Products() {
                       <Link
                         to="/contact"
                         state={{ selectedProduct: product.name }}
-                        className="btn-primary w-full text-center inline-flex items-center justify-center text-sm"
+                        className="btn-primary w-full text-center inline-flex items-center justify-center text-sm font-bold bg-primary-600 hover:bg-primary-700 py-3"
                       >
-                        Request Quote
+                        💬 REQUEST QUOTE
                         <ArrowRight size={16} className="ml-2" />
                       </Link>
                     </div>
@@ -339,29 +342,28 @@ export default function Products() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-steel-900 text-white">
+      <section className="py-16 bg-steel-900 text-white border-l-8 border-r-8 border-primary-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Can't Find What You're Looking For?
+          <h2 className="text-3xl md:text-4xl font-black mb-6">
+            📞 CAN'T FIND WHAT YOU NEED?
           </h2>
-          <p className="text-xl text-steel-300 mb-8">
-            We specialize in custom spring manufacturing. Contact us with your
-            specifications, and we'll create the perfect solution for your
-            needs.
+          <p className="text-xl text-steel-300 mb-8 font-semibold">
+            We specialize in CUSTOM spring manufacturing. Get in touch with your
+            exact requirements, and we'll create the perfect solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="btn-primary bg-primary-600 hover:bg-primary-700 inline-flex items-center justify-center"
+              className="btn-primary bg-primary-600 hover:bg-primary-700 inline-flex items-center justify-center px-8 py-4 font-black text-lg"
             >
-              Request Custom Quote
+              📋 REQUEST CUSTOM QUOTE
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <a
               href="tel:9440596384"
-              className="btn-outline border-white text-white hover:bg-white hover:text-steel-900 inline-flex items-center justify-center"
+              className="btn-outline border-white text-white hover:bg-white hover:text-steel-900 inline-flex items-center justify-center px-8 py-4 font-black text-lg"
             >
-              Call: 9440596384
+              ☎️ CALL: 9440596384
             </a>
           </div>
         </div>
