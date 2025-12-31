@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
 import SpringEnquiry from "./pages/SpringEnquiry";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
                   <Route path="/products" element={<Products />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/spring-enquiry" element={<SpringEnquiry />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-use" element={<TermsOfUse />} />
                 </Routes>
               </main>
               <Footer />

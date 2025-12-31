@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
@@ -109,25 +109,19 @@ export default function Footer() {
           {/* Business Hours & WhatsApp */}
           <div>
             <h4 className="text-lg font-semibold mb-4">{t.businessHours}</h4>
-            <div className="flex items-start space-x-3 mb-4">
-              <Clock
-                size={20}
-                className="text-primary-400 dark:text-primary-300 mt-1 flex-shrink-0"
-              />
-              <div className="text-steel-300 dark:text-steel-400 text-sm">
-                <p>{t.mondayToSaturday}</p>
-                <p className="font-semibold">9:00 AM - 6:00 PM</p>
-                <p className="mt-2 text-steel-400 dark:text-steel-500">
-                  {t.sundayClosed}
-                </p>
-              </div>
+            <div className="text-steel-300 dark:text-steel-400 text-sm mb-4">
+              <p>{t.mondayToSaturday}</p>
+              <p className="font-semibold">9:00 AM - 6:00 PM</p>
+              <p className="mt-2 text-steel-400 dark:text-steel-500">
+                {t.sundayClosed}
+              </p>
             </div>
 
             <a
               href="https://wa.me/919440596384"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors duration-200 mt-4"
+              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white px-4 py-3 rounded-lg transition-colors duration-200"
             >
               <MessageCircle size={20} />
               <span>{t.whatsappUs}</span>
@@ -137,6 +131,21 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-steel-700 dark:border-steel-800 text-center text-steel-400 dark:text-steel-500 text-sm">
+          <div className="mb-4 space-x-4">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-primary-400 dark:hover:text-primary-300 transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <span>|</span>
+            <Link
+              to="/terms-of-use"
+              className="hover:text-primary-400 dark:hover:text-primary-300 transition-colors"
+            >
+              Terms of Use
+            </Link>
+          </div>
           <p>
             &copy; {currentYear} Noor Springs. {t.allRightsReserved} |
             {t.proprietor}
