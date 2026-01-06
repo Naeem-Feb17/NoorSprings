@@ -8,7 +8,6 @@ import {
   Phone,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import AdBanner from "../components/AdBanner";
 import SEO from "../components/SEO";
 import banner from "../Assests/banner.png";
 
@@ -224,9 +223,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Banner - clearly labeled and separated from navigation */}
-      <AdBanner slot="1234567890" format="auto" />
-
       {/* About Preview */}
       <section className="py-16 bg-steel-900 dark:bg-steel-950 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -314,9 +310,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ad Banner - clearly labeled and separated from CTA buttons */}
-      <AdBanner slot="1234567890" format="auto" />
 
       {/* CTA Section - DISTINCT from ads and navigation */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-900 dark:to-primary-950 text-white relative overflow-hidden">
