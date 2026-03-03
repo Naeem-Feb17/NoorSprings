@@ -51,10 +51,28 @@ export default function About() {
   return (
     <div>
       <SEO
-        title="About Noor Springs - Spring Manufacturing Excellence Since 2011"
-        description="Learn about Noor Springs, a trusted spring manufacturer in Visakhapatnam since 2011. Founded by Mr. Noor Mohammed, we deliver quality compression, tension, and torsion springs to industries across India."
-        keywords="about Noor Springs, spring manufacturer history, Visakhapatnam springs, Mr. Noor Mohammed, spring manufacturing company"
+        title="About Noor Springs | Spring Manufacturer Visakhapatnam Since 2011 | Mr. Noor Mohammed"
+        description="Noor Springs was founded in 2011 by Mr. Noor Mohammed in Visakhapatnam, Andhra Pradesh. We are an ISO certified spring manufacturer supplying compression, tension, torsion and custom springs across India. 13+ years of excellence, 500+ satisfied clients."
+        keywords="about Noor Springs, Noor Mohammed spring manufacturer, spring factory Visakhapatnam history, ISO certified spring manufacturer India, spring company Andhra Pradesh, industrial spring supplier Vizag, spring manufacturer since 2011"
         canonical="https://noorspring.vercel.app/about"
+        breadcrumb={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://noorspring.vercel.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "About",
+              item: "https://noorspring.vercel.app/about",
+            },
+          ],
+        }}
       />
 
       {/* Hero Section */}

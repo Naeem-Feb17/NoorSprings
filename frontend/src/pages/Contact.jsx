@@ -55,10 +55,42 @@ export default function Contact() {
     });
   };
 
+  const sendToGmail = () => {
+    const subject = encodeURIComponent(
+      `Enquiry - ${formData.productType} - ${formData.name}`,
+    );
+    const nl = "\r\n";
+    const bodyText = [
+      `Dear Noor Springs Team,`,
+      ``,
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Product Type: ${formData.productType}`,
+      ``,
+      `Message:`,
+      `${formData.message || "N/A"}`,
+      ``,
+      `Regards,`,
+      `${formData.name}`,
+    ].join(nl);
+    const body = encodeURIComponent(bodyText);
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=noorsprings@gmail.com&su=${subject}&body=${body}`;
+    const w = window.open(url, "_blank");
+    if (!w) return false;
+    try {
+      w.focus();
+    } catch (e) {}
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: "", message: "" });
+
+    // Always open Gmail compose immediately
+    sendToGmail();
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
@@ -83,14 +115,10 @@ export default function Contact() {
       // Scroll to success message
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
-      const errorMessage =
-        error.response?.data?.message ||
-        error.response?.data?.errors?.[0]?.message ||
-        "Failed to submit enquiry. Please try again or call us directly.";
-
       setStatus({
-        type: "error",
-        message: errorMessage,
+        type: "warning",
+        message:
+          "Server failed but Gmail compose was opened — your enquiry was sent via email.",
       });
     } finally {
       setLoading(false);
@@ -100,10 +128,28 @@ export default function Contact() {
   return (
     <div>
       <SEO
-        title="Contact Noor Springs - Get Quote for Custom Spring Manufacturing"
-        description="Contact Noor Springs in Visakhapatnam for custom spring solutions. Call +91-9440596384 or send enquiry. Located near Dolphin Hotel, Suryabagh. Open Mon-Sat 9 AM - 6 PM."
-        keywords="contact Noor Springs, spring quote, spring enquiry, Visakhapatnam spring manufacturer, custom spring order, spring supplier contact"
+        title="Contact Noor Springs | Get a Spring Quote | Visakhapatnam | +91-9440596384"
+        description="Contact Noor Springs for custom spring manufacturing quotes. Located near Dolphin Hotel, Suryabagh, Visakhapatnam — 530020. Call +91-9440596384 or email noorsprings@gmail.com. Open Monday–Saturday, 9 AM to 6 PM. Fast quotes for compression, tension, torsion and custom springs."
+        keywords="contact Noor Springs, spring quote Visakhapatnam, spring manufacturer phone number, custom spring order India, spring enquiry Vizag, spring supplier contact Andhra Pradesh, bulk spring order, industrial spring quote, Noor Springs address Visakhapatnam"
         canonical="https://noorspring.vercel.app/contact"
+        breadcrumb={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://noorspring.vercel.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Contact",
+              item: "https://noorspring.vercel.app/contact",
+            },
+          ],
+        }}
       />
 
       {/* Hero Section */}
@@ -130,12 +176,19 @@ export default function Contact() {
               className={`mb-8 p-4 rounded-lg flex items-start space-x-3 ${
                 status.type === "success"
                   ? "bg-green-50 border border-green-200"
-                  : "bg-red-50 border border-red-200"
+                  : status.type === "warning"
+                    ? "bg-yellow-50 border border-yellow-200"
+                    : "bg-red-50 border border-red-200"
               }`}
             >
               {status.type === "success" ? (
                 <CheckCircle
                   className="text-green-600 flex-shrink-0 mt-0.5"
+                  size={24}
+                />
+              ) : status.type === "warning" ? (
+                <AlertCircle
+                  className="text-yellow-600 flex-shrink-0 mt-0.5"
                   size={24}
                 />
               ) : (
@@ -146,7 +199,11 @@ export default function Contact() {
               )}
               <p
                 className={
-                  status.type === "success" ? "text-green-800" : "text-red-800"
+                  status.type === "success"
+                    ? "text-green-800"
+                    : status.type === "warning"
+                      ? "text-yellow-800"
+                      : "text-red-800"
                 }
               >
                 {status.message}

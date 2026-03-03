@@ -1,4 +1,4 @@
-# Noor Springs - Robots.txt
+# Noor Springs - robots.txt
 # https://noorspring.vercel.app/
 
 User-agent: *
@@ -7,10 +7,17 @@ Allow: /about
 Allow: /products
 Allow: /contact
 Allow: /spring-enquiry
+Allow: /privacy-policy
+Allow: /terms-of-use
+Allow: /springs/
 
-# Disallow admin or backend routes if any
+# Block backend / API routes
 Disallow: /admin
 Disallow: /api
+Disallow: /_vercel
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 5
 
 # Sitemap location
 Sitemap: https://noorspring.vercel.app/sitemap.xml

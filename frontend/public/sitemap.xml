@@ -1,45 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Homepage -->
   <url>
     <loc>https://noorspring.vercel.app/</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/metallic-spring-workbench.png</image:loc>
+      <image:title>Noor Springs — Spring Manufacturer Visakhapatnam</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/compression-spring-types.png</image:loc>
+      <image:title>Compression Spring Types — Noor Springs</image:title>
+    </image:image>
   </url>
-  
+
   <!-- About Page -->
   <url>
     <loc>https://noorspring.vercel.app/about</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
-  
+
   <!-- Products Page -->
   <url>
     <loc>https://noorspring.vercel.app/products</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/shiny-compression-spring.png</image:loc>
+      <image:title>Compression Spring — Noor Springs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/torsion-spring.png</image:loc>
+      <image:title>Torsion Spring — Noor Springs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/cylindrical-tension-spring.png</image:loc>
+      <image:title>Tension Spring — Noor Springs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/spiral-spring.png</image:loc>
+      <image:title>Spiral Garage Coil Spring — Noor Springs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/wires-different-size.png</image:loc>
+      <image:title>Spring Wire in Different Sizes — Noor Springs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://noorspring.vercel.app/springs/r-pin.png</image:loc>
+      <image:title>R-Pin Cotter Pin Spring — Noor Springs</image:title>
+    </image:image>
   </url>
-  
+
   <!-- Contact Page -->
   <url>
     <loc>https://noorspring.vercel.app/contact</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
 
   <!-- Spring Enquiry Page -->
   <url>
     <loc>https://noorspring.vercel.app/spring-enquiry</loc>
-    <lastmod>2025-11-12</lastmod>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://noorspring.vercel.app/privacy-policy</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+  <!-- Terms of Use -->
+  <url>
+    <loc>https://noorspring.vercel.app/terms-of-use</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
 
 </urlset>

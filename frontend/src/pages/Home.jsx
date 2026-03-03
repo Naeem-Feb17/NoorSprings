@@ -8,9 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
-import AdBanner from "../components/AdBanner";
 import SEO from "../components/SEO";
-import banner from "../Assests/banner.png";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -19,7 +17,7 @@ export default function Home() {
       name: "Compression Springs",
       description:
         "High-quality compression springs for various industrial applications",
-      icon: "compression-spring",
+      image: "/springs/compression-spring-1.png",
       color: "from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900",
       borderColor: "border-blue-200 dark:border-blue-800",
       textColor: "text-blue-600 dark:text-blue-400",
@@ -27,7 +25,7 @@ export default function Home() {
     {
       name: "Tension Springs",
       description: "Extension springs for pulling and holding applications",
-      icon: "tension-spring",
+      image: "/springs/cylindrical-tension-spring.png",
       color: "from-green-50 to-green-100 dark:from-green-950 dark:to-green-900",
       borderColor: "border-green-200 dark:border-green-800",
       textColor: "text-green-600 dark:text-green-400",
@@ -35,7 +33,7 @@ export default function Home() {
     {
       name: "Torsion Springs",
       description: "Precision-engineered torsion springs for rotational force",
-      icon: "torsion-spring",
+      image: "/springs/torsion-spring.png",
       color: "from-amber-50 to-amber-100 dark:from-amber-950 dark:to-amber-900",
       borderColor: "border-amber-200 dark:border-amber-800",
       textColor: "text-amber-600 dark:text-amber-400",
@@ -43,7 +41,7 @@ export default function Home() {
     {
       name: "Flat Springs",
       description: "Durable flat springs made from premium materials",
-      icon: "flat-spring",
+      image: "/springs/spiral-spring.png",
       color: "from-red-50 to-red-100 dark:from-red-950 dark:to-red-900",
       borderColor: "border-red-200 dark:border-red-800",
       textColor: "text-red-600 dark:text-red-400",
@@ -76,21 +74,40 @@ export default function Home() {
   return (
     <div>
       <SEO
-        title="Noor Springs - Premium Spring Manufacturer in Visakhapatnam | Since 2011"
-        description="Noor Springs offers high-quality compression, tension, torsion, and flat springs in Visakhapatnam. ISO certified manufacturing with 13+ years of excellence. Custom spring solutions for all industries."
-        keywords="Noor Springs, spring manufacturer Visakhapatnam, compression springs, tension springs, torsion springs, flat springs, industrial springs, custom springs, spring supplier Andhra Pradesh"
+        title="Noor Springs | Spring Manufacturer in Visakhapatnam | Compression, Tension, Torsion & Custom Springs"
+        description="Noor Springs — Premier spring manufacturer in Visakhapatnam (Vizag), Andhra Pradesh since 2011. We supply compression springs, tension springs, torsion springs, flat springs, die springs and fully custom industrial springs. ISO certified. 500+ happy clients. Call +91-9440596384 for quotes."
+        keywords="Noor Springs, spring manufacturer Visakhapatnam, spring manufacturer Vizag, compression springs Andhra Pradesh, tension springs, torsion springs, flat springs, die springs, industrial springs supplier, custom spring manufacturer India, coil spring factory Vizag, spring maker near me, spring supplier Andhra Pradesh"
         canonical="https://noorspring.vercel.app/"
+        breadcrumb={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://noorspring.vercel.app/",
+            },
+          ],
+        }}
       />
 
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center text-white"
-        style={{ backgroundImage: `url(${banner})` }}
+        style={{
+          backgroundImage: `url(/springs/metallic-spring-workbench.png)`,
+        }}
       >
         {/* Darker overlay + subtle backdrop blur to improve text contrast */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-3xl">
+            {/* Credibility badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/30 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-5 backdrop-blur-sm">
+              <span className="text-green-400">✔</span>
+              Manufacturing Industrial Springs Since 2011
+            </div>
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight"
               style={{ textShadow: "0 6px 18px rgba(0,0,0,0.7)" }}
@@ -183,12 +200,12 @@ export default function Home() {
                 className="card group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-l-4 border-transparent hover:border-l-4 hover:border-current bg-white dark:bg-steel-800"
               >
                 <div
-                  className={`h-48 bg-gradient-to-br ${product.color} dark:bg-gradient-to-br flex items-center justify-center ${product.borderColor} border rounded-t-lg transition-transform duration-300`}
+                  className={`h-52 bg-white dark:bg-steel-700 flex items-center justify-center p-4 ${product.borderColor} border rounded-t-lg`}
                 >
                   <img
-                    src={`/icons/${product.icon}.svg`}
+                    src={product.image}
                     alt={product.name}
-                    className={`w-24 h-24 ${product.textColor} filter drop-shadow-lg`}
+                    className="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -224,8 +241,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Banner - clearly labeled and separated from navigation */}
-      <AdBanner slot="1234567890" format="auto" />
+      {/* Custom Springs Banner */}
+      <section className="py-0 bg-white dark:bg-steel-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <div className="relative bg-gradient-to-r from-steel-900 via-primary-900 to-primary-800 rounded-2xl overflow-hidden shadow-2xl">
+            {/* Background image overlay */}
+            <img
+              src="/springs/springs.png"
+              alt="Custom springs"
+              className="absolute inset-0 w-full h-full object-cover opacity-10"
+            />
+            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10 p-10 lg:p-14">
+              {/* Left: text */}
+              <div className="flex-1 text-white">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-300 mb-3">
+                  Engineered to Order
+                </p>
+                <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+                  Custom Springs for Every Project &amp; Industrial Machine
+                </h2>
+                <p className="text-steel-300 text-base mb-6 leading-relaxed max-w-xl">
+                  Whether you're building industrial machinery, automation
+                  equipment, agricultural tools, or a special project — we
+                  manufacture springs to your exact dimensions. Share a drawing,
+                  a sample, or just the specs. We'll handle the rest.
+                </p>
+                {/* Feature pills */}
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {[
+                    "Any Wire Diameter",
+                    "Any Free Length",
+                    "Stainless / Carbon / Alloy",
+                    "Low MOQ",
+                    "Fast Turnaround",
+                    "Inspection Report Included",
+                  ].map((f) => (
+                    <span
+                      key={f}
+                      className="text-xs font-semibold bg-white/10 border border-white/20 text-white px-3 py-1.5 rounded-full"
+                    >
+                      ✔ {f}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/spring-enquiry"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-700 font-black rounded-xl hover:bg-primary-50 shadow-lg text-base transition-all hover:scale-105"
+                  >
+                    📋 Submit Your Requirements
+                    <ArrowRight className="ml-2" size={20} />
+                  </Link>
+                  <a
+                    href="tel:9440596384"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-black rounded-xl shadow-lg text-base transition-all hover:scale-105"
+                  >
+                    <Phone size={18} className="mr-2" />
+                    Call: 9440596384
+                  </a>
+                </div>
+              </div>
+              {/* Right: spring image */}
+              <div className="lg:w-72 flex-shrink-0 flex items-center justify-center">
+                <img
+                  src="/springs/compression-spring-types.png"
+                  alt="Custom spring varieties"
+                  className="w-full max-w-xs rounded-xl shadow-2xl border-4 border-white/10"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Preview */}
       <section className="py-16 bg-steel-900 dark:bg-steel-950 text-white">
@@ -315,10 +402,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Banner - clearly labeled and separated from CTA buttons */}
-      <AdBanner slot="1234567890" format="auto" />
-
-      {/* CTA Section - DISTINCT from ads and navigation */}
+      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-900 dark:to-primary-950 text-white relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5">

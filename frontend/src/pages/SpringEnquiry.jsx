@@ -43,17 +43,27 @@ export default function SpringEnquiry() {
 
   const sendToGmail = () => {
     const subject = encodeURIComponent(
-      `Spring Enquiry - ${formData.springType} - ${formData.name}`
+      `Spring Enquiry - ${formData.springType} - ${formData.name}`,
     );
-    const body = encodeURIComponent(
-      `Dear Noor Springs Team,%0D%0A%0D%0AName: ${formData.name}%0D%0AEmail: ${
-        formData.email
-      }%0D%0APhone: ${formData.phone}%0D%0AType: ${
-        formData.springType
-      }%0D%0AQuantity: ${formData.numberOfPieces}%0D%0A%0D%0A${
-        formData.additionalInfo || ""
-      }%0D%0A`
-    );
+    const nl = "\r\n";
+    const bodyText = [
+      `Dear Noor Springs Team,`,
+      ``,
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Spring Type: ${formData.springType}`,
+      `Outer Diameter (mm): ${formData.outerDiameter || "N/A"}`,
+      `Inner Diameter (mm): ${formData.innerDiameter || "N/A"}`,
+      `Quantity: ${formData.numberOfPieces}`,
+      ``,
+      `Additional Info:`,
+      `${formData.additionalInfo || "N/A"}`,
+      ``,
+      `Regards,`,
+      `${formData.name}`,
+    ].join(nl);
+    const body = encodeURIComponent(bodyText);
     const url = `https://mail.google.com/mail/?view=cm&fs=1&to=noorsprings@gmail.com&su=${subject}&body=${body}`;
     const w = window.open(url, "_blank");
     if (!w) return false;
@@ -111,8 +121,28 @@ export default function SpringEnquiry() {
   return (
     <div>
       <SEO
-        title="Spring Enquiry"
-        description="Request a quotation for springs"
+        title="Custom Spring Enquiry Form | Submit Specifications | Noor Springs Visakhapatnam"
+        description="Submit your custom spring specifications to Noor Springs. Provide OD, ID, wire diameter, free length, material, load requirements and technical drawings. We manufacture to any spec. Contact +91-9440596384 for fast delivery from Visakhapatnam."
+        keywords="custom spring enquiry, spring specification form, spring manufacturing quote India, OD ID wire diameter spring, bespoke spring order, custom coil spring manufacturer, spring drawing submission, industrial custom spring Vizag"
+        canonical="https://noorspring.vercel.app/spring-enquiry"
+        breadcrumb={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://noorspring.vercel.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Spring Enquiry",
+              item: "https://noorspring.vercel.app/spring-enquiry",
+            },
+          ],
+        }}
       />
 
       <section className="py-12">
@@ -282,9 +312,9 @@ export default function SpringEnquiry() {
                 onClick={() =>
                   window.open(
                     `https://wa.me/919440596384?text=${encodeURIComponent(
-                      `Spring enquiry from ${formData.name || "website"}`
+                      `Spring enquiry from ${formData.name || "website"}`,
                     )}`,
-                    "_blank"
+                    "_blank",
                   )
                 }
                 className="btn-outline flex items-center"

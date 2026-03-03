@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import SEO from "../components/SEO";
+import ProductImageSlider from "../components/ProductImageSlider";
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -19,130 +20,204 @@ export default function Products() {
   const products = [
     {
       id: 1,
-      name: "Flat Compression Spring",
+      name: "Compression Spring",
+      grade: "Standard Grade",
       category: "Compression",
       description:
-        "Stainless steel compression springs, 15cm height × 5cm length, silver color. 250kg load capacity, ideal for electrical and mechanical applications.",
+        "Precision stainless steel compression springs for electrical, mechanical, and general industrial applications.",
       specs: [
+        "Wire Dia: 1 mm – 8 mm",
+        "Outer Dia (OD): 6 mm – 80 mm",
+        "Free Length: 10 mm – 300 mm",
         "Material: Stainless Steel",
-        "Height: 15cm",
-        "Length: 5cm",
-        "Load: 250kg",
+        "Load Capacity: up to 250 kg",
       ],
-      icon: "compression-spring",
+      images: [
+        "/springs/shiny-compression-spring.png",
+        "/springs/compression-spring-2.png",
+      ],
     },
     {
       id: 2,
-      name: "Flat Wire Springs",
+      name: "Flat Spring",
+      grade: "Light Duty",
       category: "Flat",
       description:
-        "Sturdy design and lightweight flat wire springs. 15cm height, silver color with 5mm wire diameter. Versatile use in automotive and household applications.",
+        "Tightly wound flat wire clock springs used in clocks, motors, retractable mechanisms, and automotive applications.",
       specs: [
-        "Material: Stainless Steel",
-        "Height: 15cm",
-        "Wire Dia: 5mm",
-        "Load: 250kg",
+        "Wire Thickness: 0.5 mm – 3 mm",
+        "Strip Width: 5 mm – 30 mm",
+        "Coil Turns: custom",
+        "Material: High-Carbon Steel",
+        "Load Capacity: up to 150 kg",
       ],
-      icon: "flat-spring",
+      images: ["/springs/flat-spring.jpg"],
     },
     {
       id: 3,
-      name: "Flat Coil Spring (Garage)",
+      name: "Spiral / Garage Coil Spring",
+      grade: "Industrial Grade",
       category: "Flat",
       description:
-        "Premium quality stainless steel flat coil spring for garage doors. 15 yard height, 10cm length, 5cm wire diameter, 500kg load capacity.",
+        "Heavy-gauge spiral flat coil springs designed for garage doors, counterbalance systems, and torsional energy storage.",
       specs: [
+        "Wire Dia: 5 mm – 15 mm",
+        "OD: 80 mm – 250 mm",
+        "Free Length: up to 15 ft",
         "Material: Stainless Steel",
-        "Height: 15 Yard",
-        "Length: 10cm",
-        "Load: 500kg",
+        "Load Capacity: up to 500 kg",
       ],
-      icon: "flat-spring",
+      images: ["/springs/spiral-spring.png"],
     },
     {
       id: 4,
-      name: "Compression Spring - Heavy Duty",
+      name: "Compression Spring — Heavy Duty",
+      grade: "Heavy Duty",
       category: "Compression",
       description:
-        "High-strength compression springs for industrial machinery and heavy-duty applications. Custom sizes available.",
+        "High-strength industrial compression springs for heavy machinery, presses, and load-bearing equipment. Custom sizes available.",
       specs: [
+        "Wire Dia: 8 mm – 30 mm",
+        "OD: 50 mm – 200 mm",
+        "Free Length: 50 mm – 500 mm",
         "Material: High Carbon Steel",
-        "Custom Sizes",
-        "Load: Up to 1000kg",
+        "Load Capacity: up to 1000 kg",
       ],
-      icon: "compression-spring",
+      images: ["/springs/compression-spring-1.png"],
     },
     {
       id: 5,
-      name: "Tension/Extension Spring",
+      name: "Tension / Extension Spring",
+      grade: "Standard Grade",
       category: "Tension",
       description:
-        "Precision-engineered extension springs that pull back when stretched. Perfect for trampolines, garage doors, and machinery.",
-      specs: ["Material: Spring Steel", "Various Sizes", "Load: Variable"],
-      icon: "tension-spring",
+        "Extension springs that store energy and return to original length. Ideal for trampolines, garage doors, and machinery.",
+      specs: [
+        "Wire Dia: 0.5 mm – 10 mm",
+        "OD: 5 mm – 80 mm",
+        "Free Length: 10 mm – 400 mm",
+        "Material: Spring Steel",
+        "Load Capacity: variable",
+      ],
+      images: [
+        "/springs/cylindrical-tension-spring.png",
+        "/springs/extension-spring.png",
+      ],
     },
     {
       id: 6,
       name: "Torsion Spring",
+      grade: "Custom Made",
       category: "Torsion",
       description:
-        "Rotational force springs used in hinges, clothespins, and vehicle suspensions. Custom torque specifications available.",
-      specs: ["Material: Music Wire", "Custom Angles", "Torque: Variable"],
-      icon: "torsion-spring",
+        "Precision torsion springs applying rotational torque. Used in hinges, clothespins, vehicle suspensions, and tooling.",
+      specs: [
+        "Wire Dia: 0.5 mm – 12 mm",
+        "Leg Length: custom",
+        "Helix Direction: LH / RH",
+        "Material: Music Wire / SS",
+        "Torque: variable",
+      ],
+      images: ["/springs/torsion-spring.png"],
     },
     {
       id: 7,
       name: "Die Spring",
+      grade: "High Precision",
       category: "Specialty",
       description:
-        "Heavy-duty compression springs used in tooling and dies. Available in light, medium, and heavy load ratings.",
-      specs: ["Material: Chrome Silicon", "Color Coded", "High Precision"],
-      icon: "compression-spring",
+        "Color-coded heavy-duty die springs for press tooling and stamping dies. Available in light, medium, and heavy load grades.",
+      specs: [
+        "Wire Dia: 4 mm – 20 mm",
+        "OD: 20 mm – 100 mm",
+        "Free Length: 25 mm – 300 mm",
+        "Material: Chrome Silicon",
+        "Load Rating: Light / Medium / Heavy",
+      ],
+      images: ["/springs/compression-spring-types.png"],
     },
     {
       id: 8,
-      name: "Leaf Spring",
-      category: "Specialty",
+      name: "Extension Spring — Heavy Duty",
+      grade: "Industrial Grade",
+      category: "Tension",
       description:
-        "Stack or layering of metal strips, commonly used in vehicle suspension systems for load distribution.",
-      specs: ["Material: Spring Steel", "Layered Design", "Vehicle Grade"],
-      icon: "flat-spring",
+        "Heavy-gauge extension springs for industrial pulling applications, agricultural machinery, and heavy equipment.",
+      specs: [
+        "Wire Dia: 5 mm – 15 mm",
+        "OD: 30 mm – 120 mm",
+        "Free Length: 100 mm – 600 mm",
+        "Material: High Carbon Steel",
+        "Load Capacity: up to 800 kg",
+      ],
+      images: ["/springs/heavy-duty-extension-spring.png"],
     },
     {
       id: 9,
-      name: "Conical Spring",
-      category: "Compression",
+      name: "Torsion Spring — Leg Type",
+      grade: "Custom Made",
+      category: "Torsion",
       description:
-        "Cone-shaped compression springs offering variable spring rates and space-saving design.",
-      specs: ["Material: Stainless Steel", "Variable Rate", "Space Saving"],
-      image: "🟣",
+        "Double-leg torsion springs with configurable leg angles, used in automotive, electronics, and mechanical assemblies.",
+      specs: [
+        "Wire Dia: 1 mm – 8 mm",
+        "Body OD: 8 mm – 60 mm",
+        "Leg Angle: 0° – 360°",
+        "Material: Music Wire",
+        "Torque: custom specification",
+      ],
+      images: ["/springs/torsion-spring-2.png"],
     },
     {
       id: 10,
-      name: "Barrel Spring",
-      category: "Compression",
+      name: "Compression & Extension Combo",
+      grade: "Multi-Purpose",
+      category: "Specialty",
       description:
-        "Barrel-shaped springs with convex sides, providing uniform stress distribution and resistance to buckling.",
-      specs: ["Material: Spring Steel", "Uniform Stress", "Stable Design"],
-      image: "🟠",
+        "Paired compression and extension spring sets for balanced force mechanisms, used in automation and assembly fixtures.",
+      specs: [
+        "Wire Dia: 1 mm – 10 mm",
+        "OD: 10 mm – 100 mm",
+        "Free Length: custom",
+        "Material: Spring Steel",
+        "Supplied as matched pairs",
+      ],
+      images: ["/springs/compression-extension-spring.png"],
     },
     {
       id: 11,
-      name: "Wave Spring",
+      name: "R-Pin / Cotter Pin Spring",
+      grade: "Fastening Grade",
       category: "Specialty",
       description:
-        "Space-efficient spring design with wave-like coils, ideal for tight spaces requiring high force.",
-      specs: ["Material: Spring Steel", "Compact Design", "High Force"],
-      image: "🔷",
+        "Spring steel R-pins and cotter pins for securing axles, clevis pins, and shafts in agricultural and industrial equipment.",
+      specs: [
+        "Wire Dia: 1.5 mm – 6 mm",
+        "Pin Length: 20 mm – 150 mm",
+        "Material: Spring Steel",
+        "Finish: Zinc / Plain",
+        "Load: locking / snap-fit",
+      ],
+      images: ["/springs/r-pin.png", "/springs/r-pin-2.png"],
     },
     {
       id: 12,
       name: "Custom Springs",
+      grade: "Custom Made",
       category: "Specialty",
       description:
-        "Made-to-order springs designed to your exact specifications. Any material, size, or load requirement.",
-      specs: ["Custom Material", "Any Dimension", "Your Specs"],
-      image: "⭐",
+        "Made-to-order springs built to your exact drawings and specifications. Any type, material, size, or load requirement.",
+      specs: [
+        "Any wire diameter",
+        "Any OD / Free Length",
+        "Any material grade",
+        "Supplied with inspection report",
+        "Min qty negotiable",
+      ],
+      images: [
+        "/springs/springs.png",
+        "/springs/metallic-spring-workbench.png",
+      ],
     },
   ];
 
@@ -158,10 +233,28 @@ export default function Products() {
   return (
     <div>
       <SEO
-        title="Spring Products - Compression, Tension, Torsion & Flat Springs | Noor Springs"
-        description="Explore our wide range of springs: compression springs, tension springs, torsion springs, flat springs, and custom solutions. Quality manufacturing in Visakhapatnam with fast delivery."
-        keywords="compression springs, tension springs, torsion springs, flat springs, die springs, leaf springs, coil springs, custom springs, industrial springs Visakhapatnam"
+        title="Spring Products | Compression, Tension, Torsion, Flat & Custom Springs | Noor Springs Visakhapatnam"
+        description="Browse Noor Springs\' full product catalogue: compression springs, tension springs, torsion springs, flat springs, die springs, clock springs, extension springs, R-pins and fully custom springs. Industrial-grade quality from Visakhapatnam. Call +91-9440596384."
+        keywords="compression springs Visakhapatnam, tension springs, torsion springs, flat springs, die springs, clock springs, extension springs, heavy duty springs, custom springs India, industrial spring catalogue, spring manufacturer Vizag, coil springs Andhra Pradesh, stainless steel springs, high carbon steel springs"
         canonical="https://noorspring.vercel.app/products"
+        breadcrumb={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://noorspring.vercel.app/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Products",
+              item: "https://noorspring.vercel.app/products",
+            },
+          ],
+        }}
       />
 
       {/* Hero Section */}
@@ -175,6 +268,102 @@ export default function Products() {
               Comprehensive range of high-quality springs for every application.
               From standard to custom solutions.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Wire Banner */}
+      <section className="bg-white dark:bg-steel-900 border-b border-steel-200 dark:border-steel-700">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row">
+            {/* Image Side */}
+            <div className="lg:w-2/5 relative overflow-hidden min-h-[280px]">
+              <img
+                src="/springs/wires-different-size.png"
+                alt="Spring wire in different sizes and grades"
+                className="w-full h-full object-cover"
+                style={{ minHeight: "280px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white dark:to-steel-900 hidden lg:block" />
+              <div className="absolute bottom-4 left-4 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Premium Wire Stock
+              </div>
+            </div>
+
+            {/* Content Side */}
+            <div className="lg:w-3/5 px-8 py-10 flex flex-col justify-center">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-2">
+                Raw Material Excellence
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-steel-900 dark:text-white mb-3">
+                Wire Available in Every Size &amp; Grade
+              </h2>
+              <p className="text-steel-600 dark:text-steel-400 mb-6 text-sm leading-relaxed">
+                All our springs start with precision-selected wire. From fine
+                gauge to heavy-duty rod, we stock a wide range of diameters and
+                steel grades to match exact load, corrosion, and fatigue
+                requirements.
+              </p>
+
+              {/* Wire specs grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    label: "Wire Sizes",
+                    value: "0.3 mm – 30 mm",
+                    icon: "📏",
+                  },
+                  {
+                    label: "Grades",
+                    value: "Carbon · Alloy · SS",
+                    icon: "🔩",
+                  },
+                  {
+                    label: "Finishes",
+                    value: "Bright · Galv · EP",
+                    icon: "✨",
+                  },
+                  {
+                    label: "Purpose",
+                    value: "Auto · Industrial · Marine",
+                    icon: "🏭",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="bg-steel-50 dark:bg-steel-800 rounded-lg p-3 text-center border border-steel-200 dark:border-steel-700"
+                  >
+                    <div className="text-xl mb-1">{item.icon}</div>
+                    <div className="text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wide mb-1">
+                      {item.label}
+                    </div>
+                    <div className="text-xs text-steel-700 dark:text-steel-300 font-medium">
+                      {item.value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Wire grade tags */}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {[
+                  "IS 4454 Music Wire",
+                  "Hard Drawn",
+                  "Oil Tempered",
+                  "Stainless 302/304",
+                  "Chrome Silicon",
+                  "Chrome Vanadium",
+                  "Phosphor Bronze",
+                ].map((grade) => (
+                  <span
+                    key={grade}
+                    className="text-xs bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-800 px-3 py-1 rounded-full font-medium"
+                  >
+                    {grade}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -280,43 +469,46 @@ export default function Products() {
                 {filteredProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="card group hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-white dark:bg-steel-800"
+                    className="card group hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 bg-white dark:bg-steel-800 border border-steel-100 dark:border-steel-700 rounded-xl overflow-hidden"
                   >
-                    <div className="h-48 bg-gradient-to-br from-steel-100 to-steel-200 dark:from-steel-700 dark:to-steel-800 flex items-center justify-center border-b-2 border-primary-200 dark:border-primary-800 transition-transform duration-300">
-                      <img
-                        src={`/icons/${product.icon}.svg`}
-                        alt={product.name}
-                        className="w-20 h-20 filter drop-shadow-lg"
-                      />
-                    </div>
+                    {/* Image slider */}
+                    <ProductImageSlider
+                      images={product.images}
+                      alt={product.name}
+                    />
 
                     <div className="p-6">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-primary-600 bg-primary-50 dark:bg-primary-950 dark:text-primary-400 px-3 py-1 rounded-full">
+                      {/* Category + Grade badges */}
+                      <div className="flex items-center gap-2 mb-3 flex-wrap">
+                        <span className="text-xs font-semibold text-primary-600 bg-primary-50 dark:bg-primary-950 dark:text-primary-400 px-2.5 py-1 rounded-full">
                           {product.category}
+                        </span>
+                        <span className="text-xs font-semibold text-steel-600 dark:text-steel-300 bg-steel-100 dark:bg-steel-700 px-2.5 py-1 rounded-full border border-steel-200 dark:border-steel-600">
+                          {product.grade}
                         </span>
                       </div>
 
-                      <h3 className="text-lg font-semibold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                      <h3 className="text-lg font-bold mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors dark:text-white">
                         {product.name}
                       </h3>
 
-                      <p className="text-steel-600 dark:text-steel-400 mb-4 line-clamp-3 text-sm">
+                      <p className="text-steel-600 dark:text-steel-400 mb-4 line-clamp-2 text-sm leading-relaxed">
                         {product.description}
                       </p>
 
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-steel-900 dark:text-steel-100 mb-2 text-xs uppercase tracking-wide">
-                          Specifications:
+                      {/* Technical specs table */}
+                      <div className="mb-5 bg-steel-50 dark:bg-steel-900 rounded-lg p-3 border border-steel-200 dark:border-steel-700">
+                        <h4 className="font-bold text-steel-800 dark:text-steel-200 mb-2 text-xs uppercase tracking-widest">
+                          Technical Specs
                         </h4>
                         <ul className="space-y-1">
                           {product.specs.map((spec, index) => (
                             <li
                               key={index}
-                              className="text-xs text-steel-600 dark:text-steel-400 flex items-start"
+                              className="text-xs text-steel-700 dark:text-steel-300 flex items-start gap-2"
                             >
-                              <span className="text-primary-600 dark:text-primary-400 mr-2">
-                                •
+                              <span className="text-primary-500 font-bold mt-0.5 flex-shrink-0">
+                                ▸
                               </span>
                               {spec}
                             </li>
@@ -327,7 +519,7 @@ export default function Products() {
                       <Link
                         to="/contact"
                         state={{ selectedProduct: product.name }}
-                        className="btn-primary w-full text-center inline-flex items-center justify-center text-sm font-bold bg-primary-600 hover:bg-primary-700 py-3"
+                        className="btn-primary w-full text-center inline-flex items-center justify-center text-sm font-bold bg-primary-600 hover:bg-primary-700 py-3 rounded-lg"
                       >
                         💬 REQUEST QUOTE
                         <ArrowRight size={16} className="ml-2" />
