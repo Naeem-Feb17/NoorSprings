@@ -7,7 +7,8 @@
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
     "start-backend": "cd backend && npm run dev",
     "start-frontend": "cd frontend && npm run dev",
-    "build-frontend": "cd frontend && npm run build"
+    "build-frontend": "cd frontend && npm run build",
+    "build": "cd frontend && npm install && npm run build"
   },
   "keywords": ["noor-springs", "mern", "react", "mongodb", "express"],
   "author": "Noor Springs",
