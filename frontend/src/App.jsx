@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -13,6 +18,23 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import ScrollToTop from "./components/ScrollToTop";
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <div key={location.pathname} className="page-transition">
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/spring-enquiry" element={<SpringEnquiry />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+      </Routes>
+    </div>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
@@ -20,18 +42,10 @@ function App() {
         <LanguageProvider>
           <Router>
             <ScrollToTop />
-            <div className="flex flex-col min-h-screen bg-white dark:bg-steel-900 transition-colors duration-200">
+            <div className="flex flex-col min-h-screen bg-white transition-colors duration-200">
               <Navbar />
               <main className="flex-grow">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/spring-enquiry" element={<SpringEnquiry />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/terms-of-use" element={<TermsOfUse />} />
-                </Routes>
+                <AnimatedRoutes />
               </main>
               <Footer />
             </div>

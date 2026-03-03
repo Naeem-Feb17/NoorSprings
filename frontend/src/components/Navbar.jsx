@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
-import LanguageThemeSwitcher from "./LanguageThemeSwitcher";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
@@ -50,8 +49,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            <LanguageThemeSwitcher />
-
             <a
               href="tel:9440596384"
               className="flex items-center space-x-2 btn-primary"
@@ -63,7 +60,6 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
-            <LanguageThemeSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-steel-700 dark:text-steel-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
